@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,29 +17,50 @@
             <Font name="Bodoni MT Black Italic" size="35.0" />
          </font>
       </Label>
-      <Button layoutX="174.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" style="-fx-background-color: #1abc9c;" text="Customer">
+      <Button layoutX="166.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" style="-fx-background-color: #1abc9c;" text="Customer">
          <font>
             <Font size="18.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/user.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="321.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="33.0" prefWidth="124.0" style="-fx-background-color: #3498db;" text="Item">
+      <Button layoutX="321.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="33.0" prefWidth="124.0" style="-fx-background-color: #3498db;" text="    Item">
          <font>
             <Font size="18.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/item.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="463.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" style="-fx-background-color: #f39c12;" text="Supplier">
+      <Button layoutX="453.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="31.0" prefWidth="134.0" style="-fx-background-color: #f39c12;" text="Supplier">
          <font>
             <Font size="18.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/supplier.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
       <Button layoutX="23.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" style="-fx-background-color: #9b59b6;" text="Dashboard">
          <font>
@@ -47,9 +70,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <AnchorPane fx:id="node" layoutX="7.0" layoutY="135.0" prefHeight="255.0" prefWidth="586.0" style="-fx-background-color: #7f8c8d;">
+      <AnchorPane fx:id="node" layoutX="11.0" layoutY="131.0" prefHeight="255.0" prefWidth="578.0" style="-fx-background-color: #7f8c8d;">
          <children>
-            <TableView layoutX="47.0" layoutY="28.0" prefHeight="200.0" prefWidth="515.0">
+            <TableView layoutX="89.0" layoutY="27.0" prefHeight="201.0" prefWidth="400.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="date" />
                 <TableColumn prefWidth="75.0" text="time" />
