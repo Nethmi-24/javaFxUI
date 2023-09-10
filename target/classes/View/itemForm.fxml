@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="255.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stockmanage.controller.ItemformController">
+<AnchorPane fx:id="root" prefHeight="272.0" prefWidth="465.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stockmanage.controller.ItemformController">
 
 
 
@@ -17,19 +17,34 @@
                 <Font size="25.0" />
             </font>
         </Label>
-        <TextField layoutX="67.0" layoutY="106.0" prefHeight="27.0" prefWidth="194.0" promptText="Item Code" />
-        <TextField layoutX="270.0" layoutY="106.0" prefHeight="27.0" prefWidth="188.0" promptText="Description" />
-        <TextField layoutX="67.0" layoutY="179.0" prefHeight="27.0" prefWidth="194.0" promptText="unit price" />
-        <TextField layoutX="270.0" layoutY="179.0" prefHeight="27.0" prefWidth="188.0" promptText="Qty on hand" />
-        <Button layoutX="448.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: #3498db;" text="Save">
+        <TextField fx:id="TxtCode" layoutX="20.0" layoutY="99.0" onAction="#TxtCodeOnAction" prefHeight="27.0" prefWidth="194.0" promptText="Item Code" />
+        <TextField fx:id="TxtDesc" layoutX="229.0" layoutY="99.0" prefHeight="27.0" prefWidth="188.0" promptText="Description" />
+        <TextField fx:id="TextUprice" layoutX="20.0" layoutY="152.0" prefHeight="27.0" prefWidth="194.0" promptText="unit price" />
+        <TextField fx:id="Textqty" layoutX="229.0" layoutY="152.0" prefHeight="27.0" prefWidth="188.0" promptText="Qty on hand" />
+        <Button layoutX="399.0" layoutY="224.0" mnemonicParsing="false" onAction="#saveBtnOnAction" style="-fx-background-color: #3498db;" text="Save">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="396.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: #3498db;" text="Clear">
+        <Button layoutX="338.0" layoutY="224.0" mnemonicParsing="false" onAction="#clearBtnOnAction" style="-fx-background-color: #3498db;" text="Clear">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
+      <Button layoutX="58.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackOnAction" style="-fx-background-color: #e74c3c;" text="Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="269.0" layoutY="224.0" mnemonicParsing="false" onAction="#updateBtnOnAction" style="-fx-background-color: #3498db;" text="Update">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="205.0" layoutY="224.0" mnemonicParsing="false" onAction="#deleteBtnOnAction" style="-fx-background-color: #3498db;" text="Delete">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
     </children>
 </AnchorPane>
