@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.stockmanage.Dto.Itemdto;
 import lk.ijse.stockmanage.db.DbConnection;
 
 import java.io.IOException;
@@ -69,8 +70,9 @@ public class ItemformController {
                 String description = resultSet.getString(2);
                 double uPrice = resultSet.getDouble(3);
                 int qty = resultSet.getInt(4);
+                var itemDto = new Itemdto(code, description, uPrice, qty);
 
-                fillFields(code, description, uPrice,qty);
+                fillFields(itemDto);
             } else {
                 new Alert(Alert.AlertType.WARNING, "oops! item is not found!").show();
             }
@@ -78,11 +80,11 @@ public class ItemformController {
             throw new RuntimeException(e);
         }
     }
-    private void fillFields(String code, String description, double uPrice, int qty) {
-        TxtCode.setText(code);
-        TxtDesc.setText(description);
-        TextUprice.setText(String.valueOf(uPrice));
-        Textqty.setText(String.valueOf(qty));
+    private void fillFields(Itemdto itemDto) {
+        TxtCode.setText(itemDto.getCode());
+        TxtDesc.setText(itemDto.getDescription());
+        TextUprice.setText(String.valueOf(itemDto.getuPrice()));
+        Textqty.setText(String.valueOf(itemDto.getQty()));
     }
     public void clearBtnOnAction(ActionEvent actionEvent) {
        clearFields();

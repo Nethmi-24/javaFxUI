@@ -12,7 +12,7 @@ public class Launcher extends Application {
     }
     public void start(Stage stage) throws Exception{
 //load fxml file
-        Parent root= FXMLLoader.load(this.getClass().getResource("/View/itemForm.fxml"));
+        Parent root= FXMLLoader.load(this.getClass().getResource("/View/customerForm.fxml"));
 
         //create new scene
         Scene scene=new Scene(root);

@@ -2,6 +2,8 @@ package lk.ijse.stockmanage.controller;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import lk.ijse.stockmanage.Dto.Customerdto;
+import lk.ijse.stockmanage.Dto.Itemdto;
 import lk.ijse.stockmanage.db.DbConnection;
 
 import java.sql.Connection;
@@ -57,7 +59,9 @@ public class CustomerForm {
                 String cusAddress = resultSet.getString(3);
                 double cusSalary = resultSet.getDouble(4);
 
-                fillFields(cusId, cusName, cusAddress, cusSalary);
+                var customerDto = new Customerdto(cusId,cusName,cusAddress,cusSalary);
+                fillFields(customerDto);
+
             } else {
                 new Alert(Alert.AlertType.WARNING, "oops! customer not found!").show();
             }
@@ -65,11 +69,11 @@ public class CustomerForm {
             throw new RuntimeException(e);
         }
     }
-    private void fillFields(String cusId, String cusName, String cusAddress, double cusSalary) {
-        txtId.setText(cusId);
-        txtName.setText(cusName);
-        txtAddress.setText(cusAddress);
-        txtSalary.setText(String.valueOf(cusSalary));
+    private void fillFields(Customerdto customerdto) {
+        txtId.setText(customerdto.getId());
+        txtName.setText(customerdto.getName());
+        txtAddress.setText(customerdto.getAddress());
+        txtSalary.setText(String.valueOf(customerdto.getSalaray()));
     }
     public void clearbtnOnAction(ActionEvent actionEvent) {
         clearFields();
