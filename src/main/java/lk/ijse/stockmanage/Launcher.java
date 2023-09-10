@@ -12,12 +12,12 @@ public class Launcher extends Application {
     }
     public void start(Stage stage) throws Exception{
 //load fxml file
-        Parent root= FXMLLoader.load(this.getClass().getResource("/View/loginForm.fxml"));
+        Parent root= FXMLLoader.load(this.getClass().getResource("/View/itemForm.fxml"));
 
         //create new scene
         Scene scene=new Scene(root);
 
-        stage.setTitle("Login Form");
+        stage.setTitle("Customer Form");
         stage.centerOnScreen();  //load to center of the screen
 
         //set scene to stage
